@@ -12,8 +12,8 @@
 			};
 
 			var onSuccess = function(s) {
-				var context = new webkitAudioContext();
-				var mediaStreamSource = context.createMediaStreamSource(s);
+				var context = new AudioContext();
+				var mediaStreamSource = context.createScriptProcessor(s);
 				recorder = new Recorder(mediaStreamSource);
 				recorder.record();
 
